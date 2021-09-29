@@ -174,7 +174,7 @@ void setup()
 	*/
 
 	tft.setSwapBytes( true );
-	tft.pushImage( 0, 0,	240, 135, ttgo );
+	tft.pushImage( 0, 0,	240, 135, daughters );
 	espDelay( 5000 );
 
 
@@ -208,6 +208,7 @@ void loop()
 	String voltage = showVoltage();
 
 	printResult( "Periodic Mode", sht3xd.periodicFetchData(), voltage );
+	// Sleep the CPU for 5 seconds.
 	espDelay( 5000 );
 
 	//wifi_scan();
