@@ -33,7 +33,7 @@ void espDelay( int ms )
 	esp_sleep_enable_timer_wakeup( ms * 1000 );
 	esp_sleep_pd_config( ESP_PD_DOMAIN_RTC_PERIPH, ESP_PD_OPTION_ON );
 	esp_light_sleep_start();
-}
+} // End of espDelay()
 
 
 String showVoltage()
@@ -52,7 +52,7 @@ String showVoltage()
 		//tft.drawString( voltage,	tft.width() / 2, tft.height() / 2 );
 	}
 	return voltage;
-}
+} // End of showVoltage()
 
 
 void wifi_scan()
@@ -117,7 +117,7 @@ void printResult( String text, SHT31D result, String voltage )
 		tft.drawString( tempBuffer,  tft.width() / 2, tft.height() / 2 - 16 );
 		String humidityBuffer;
 		humidityBuffer += F( "Humidity : " );
-		humidityBuffer += String( result.t );
+		humidityBuffer += String( result.rh );
 		humidityBuffer += F( "%");
 		// Draw this line centered vertically and horizontally.
 		tft.drawString( humidityBuffer,  tft.width() / 2, tft.height() / 2 );
@@ -130,7 +130,7 @@ void printResult( String text, SHT31D result, String voltage )
 		Serial.print( ": [ERROR] Code #" );
 		Serial.println( result.error );
 	}
-}
+} // End of printResult()
 
 
 void setup()
@@ -198,7 +198,7 @@ void setup()
 	tft.drawString( "RightButtonLongPress:", tft.width() / 2, tft.height() / 2 + 48 );
 	tft.drawString( "[Deep Sleep]", tft.width() / 2, tft.height() / 2 + 64 );
 	tft.setTextDatum( TL_DATUM );
-}
+} // End of setup()
 
 
 void loop()
@@ -212,5 +212,5 @@ void loop()
 	espDelay( 5000 );
 
 	//wifi_scan();
-	//delay( 5000 );
-}
+	//espDelay( 5000 );
+} // End of loop()
