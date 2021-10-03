@@ -1,10 +1,17 @@
-#include <TFT_eSPI.h>
-#include <SPI.h>
-#include "WiFi.h"
-#include <Wire.h>
-#include "esp_adc_cal.h"
-#include "bmp.h"
-#include "ClosedCube_SHT31D.h"
+#include <Wire.h>						// This header is part of the standard library.  https://www.arduino.cc/en/reference/wire
+#include <TFT_eSPI.h>				// This header is included in https://github.com/Xinyuan-LilyGO/TTGO-T-Display
+#include <SPI.h>						// This header is added to the IDE libraries after the ESP32 is added in board manager.
+#include "WiFi.h"						// This header is added to the IDE libraries after the ESP32 is added in board manager.
+#include "esp_adc_cal.h"			// This header is added to the IDE libraries after the ESP32 is added in board manager.
+#include "ClosedCube_SHT31D.h"	// This header is used to read from the HT30 sensor.  https://github.com/closedcube/ClosedCube_SHT31D_Arduino
+#include "bmp.h"						// Created at http://www.rinkydinkelectronics.com/t_imageconverter565.php
+#include "networkVariables.h"		// I use this file to hide my network information from random people browsing my GitHub repo.
+
+
+/*
+	https://dl.espressif.com/dl/package_esp32_index.json
+	http://arduino.esp8266.com/stable/package_esp8266com_index.json
+*/
 
 
 // TFT Pins has been set in the TFT_eSPI library in the User Setup file TTGO_T_Display.h
