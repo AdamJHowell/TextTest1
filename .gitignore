@@ -1,3 +1,9 @@
+.idea/
+*.iml
+privateInfo.*
+debug_custom.json
+*.svd
+
 # Prerequisites
 *.d
 
